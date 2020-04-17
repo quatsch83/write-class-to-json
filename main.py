@@ -59,15 +59,12 @@ class Data:
         return cls(**dict_read)
 
     def __eq__(self, other):
-        if (
+        return bool(
             (self.df == other.df).all().all()
             and (self.shape == other.shape)
             and (self.name == other.name)
             and (self.color == other.color)
-        ):
-            return True
-        else:
-            return False
+        )
 
 
 if __name__ == "__main__":
